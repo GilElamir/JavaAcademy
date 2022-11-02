@@ -1,0 +1,46 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class EsercizioRandom {
+
+	
+	/*
+	 *  * SIMULARE IL GIOCO DELLA ROULETTE
+	 * INSERENDO UN NUMERO DA TASTIERA
+	 * E VERIFICARE SE AVETE VINTO 
+	 * OPPURE NO.
+	 * 
+	 * IL NUMERO DELLA TASTIERA 
+	 * DEVE ESSERE COMPRESO TRA 0 -36
+	 */
+	public static void main(String[] args) {
+		
+		Scanner key = new Scanner (System.in);
+		System.out.println("Inserisci un numero compreso tra 0 e 36 ");
+		
+		int numero = key.nextInt();
+		if (numero>=0 && numero<=36) {
+			Random random = new Random();
+			
+			int genera = random .nextInt(37);
+			
+			System.out.println("Il banco ha chiamato il numero " + genera);
+			
+			if (numero== genera) {
+				System.out.println("HAI VINTO !");
+				
+			} 
+			else 
+				System.out.println("Ritenta, sarai più fortunato  ");
+		} 
+		else 	
+			System.err.println("Il numero che hai inserito non è compreso tra 0 e 36 ");
+		
+		
+		
+		
+		key.close();
+		
+	}
+
+}
